@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Allows</title>
+</head>
+<body>
+<div th:switch="${allows}">
+    <h2 th:case="null">No allow found!</h2>
+    <div th:case="*">
+        <h2>Allows</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Allow Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="allow : ${allows}">
+                <td th:text="${allow.id}"></td>
+                <td th:text="${allow.allowName}"></td>
+                <td><a th:href="@{allow-update/{id}(id=${allow.id})}">Edit</a></td>
+                <td><a th:href="@{allow-delete/{id}(id=${allow.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/allow-create">Create allow</a></p>
+</div>
+</body>
+</html>

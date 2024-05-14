@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create allow</title>
+</head>
+<body>
+<form action="#" th:action="@{/allow-create}" th:object="${allow}" method="post">
+    <label for="allowName">Allow name</label>
+    <input type="text" th:field="*{allowName}" id="allowName" placeholder="Allow Name">
+    <input type="submit" value="Create Allow">
+</form>
+</body>
+</html>
